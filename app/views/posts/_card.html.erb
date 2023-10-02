@@ -8,7 +8,7 @@
       <% end %>
     </div>
     <div class="post-card-title mt-2"><%= post.title.first(20) %><%= "..." if post.title.size > 20 %></div>
-    <div class="post-card-content mt-2"><%= post.content.first(45) %><%= "..." if post.content.size > 45 %></div>
+    <div class="post-card-content mt-2"><%= post.content.first(45).html_safe %><%= "..." if post.content.size > 45 %></div>
     <div class="post-card-button">
       <%= link_to "Lire", post_path(post), class: "cta-read-post" %>
     </div>

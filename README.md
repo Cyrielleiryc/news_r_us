@@ -1,71 +1,32 @@
-# Rails Share Posts
 
-Dans cet exercice, vous devez implémenter des fonctionnalités dans une application web `rails` à partir du cahier des charges spécifié ci-dessous et correspondant à votre sujet :
+# News'R'Us
 
-```
-Vous devez créer une plateforme pour publier et commenter des articles d'information
-```
+Small web application that enables users to read and create posts about actuality. Comments and ratings are available too.
 
-## Setup
 
-Clonez le dépôt GitHub et exécutez les commandes habituelles vous permettant de lancer l'application sur votre ordinateur.
+![Logo]('app/assets/images/logo')
 
-Si vous voyez s'afficher le message `rbenv: version 3.1.2 is not installed`, exécutez la commande suivante pour installez la version de `ruby` correspondante :
 
-```bash
-rbenv install 3.1.2 && gem install bundler rubocop pry pry-byebug
-```
+## Autrice
 
-Vous pourrez alors réexécuter les commandes habituelles vous permettant de lancer l'application.
+- [@cyrielleiryc](https://www.github.com/cyrielleiryc)
 
-## Base de données
 
-Effectuez les modifications du code nécessaires à l'obtention du schema de données suivant :
+## Captures d'écran
 
-<img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/assess/share_post_db_schema.png" alt="DB schema">
+![Accueil]('app/assets/images/01_accueil')
+![Index]('app/assets/images/02_index')
+![En-tête d'un article]('app/assets/images/03_show1')
+![Liste de mes articles]('app/assets/images/06_my_posts')
 
-Un utilisateur n'est pas valide :
 
-- S'il n'a pas de pseudonyme.
-- Si son pseudonyme dépasse 50 caractères. 
+## Demo
 
-Une publication n'est pas valide :
+https://www.loom.com/share/c2095f3d08ea4918a86277efca619d78?sid=77a80251-815e-406a-98a3-ac7495a8c8f1
 
-- Si elle n'a pas de titre.
-- Si elle n'a pas de contenu.
-- Si elle n'a pas de URL.
 
-Un commentaire n'est pas valide :
-- S'il n'a pas de contenu.
+## Tech Stack
 
-La suppression d'un utilisateur doit entraîner la suppression de ses publications et de ses commentaires. La suppression d'une publication doit entraîner la suppression de ses commentaires.
+**Client:** HTML, CSS, JavaScript, Stimulus
 
-**NB :** La gem `devise` a déjà été ajoutée et la table `users` a déjà été créée.
-
-## Interface utilisateur
-
-Effectuez les modifications du code nécessaires à l'implémentation des parcours utilisateurs suivants :
-
-- En tant qu'utilisateur, je peux accéder à la page d'accueil.
-- En tant qu'utilisateur, je peux voir la liste de toutes les publications.
-- En tant qu'utilisateur, je peux accéder aux détails de chaque publication et la liste des commentaires associés.
-- En tant qu'utilisateur, je peux commenter une publication.
-
-## Spécifications
-
-- Respectez les conventions de `rails`.
-- La page d'accueil doit contenir un lien permettant d'accéder à la liste des publications.
-- La page listant les publications doit contenir les liens permettant d'accéder aux détails de chaque publication.
-- La page affichant les détails d'une publication doit contenir un lien permettant de retourner sur la page listant toutes les publications.
-- La page affichant les détails d'une publication doit contenir le formulaire permettant de faire un commentaire.
-- La page affichant les détails d'une publication doit afficher la liste des commentaires associés.
-- Lorsque l'utilisateur crée un compte, il doit renseigner son pseudonyme dans le formulaire. Vous pouvez vous référer à la <a href="https://github.com/heartcombo/devise" target="_blank">documentation de `devise`</a> à ce sujet.
-- Le formulaire de commentaire doit comporter un champ de texte multiligne pour faciliter la saisie de long commentaire. Vous pouvez vous référer à la <a href="https://github.com/heartcombo/simple_form" target="_blank">documentation de `simple_form`</a> à ce sujet.
-- Lors de la soumission d'un commentaire, l'utilisateur doit être redirigé vers la page de détails de la publication et une <a href="https://www.rubyguides.com/2019/11/rails-flash-messages/" target="_blank">notification flash</a> doit s'afficher pour confirmer la sauvegarde du commentaire.
-
-## Ressources
-
-Pour avoir une interface soignée, nous vous conseillons d'utiliser :
-
-- <a href="https://getbootstrap.com/docs/4.6/getting-started/introduction/" target="_blank">Bootstrap</a> (déjà installé)
-- <a href="https://uikit.lewagon.com/" target="_blank">L'UI Kit du Wagon</a>
+**Server:** Ruby, Rails, PostgreSQL

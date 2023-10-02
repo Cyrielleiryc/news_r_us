@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!, only: %i[index]
   skip_after_action :verify_authorized, only: %i[show new create]
 
@@ -12,7 +13,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @comments = @post.comments.order(:created_at).reverse
     @comment = Comment.new
   end
@@ -32,10 +32,35 @@ class PostsController < ApplicationController
   end
 
   def my_posts
-    @posts = Post.where(user: current_user)
+    @posts = Post.where(user: current_user).order(:created_at).reverse
+    authorize @posts, policy_class: PostPolicy
+  end
+
+  def edit
+    authorize @post
+  end
+
+  def update
+    authorize @post
+    @post.update(post_params)
+    if @post.save
+      redirect_to post_path(@post)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    authorize @post
+    @post.destroy
+    redirect_to my_posts_path, status: :see_other
   end
 
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:title, :content, :url, :photo)

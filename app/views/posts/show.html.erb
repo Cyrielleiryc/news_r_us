@@ -14,8 +14,8 @@
         <%= cl_image_tag @post.user.avatar.key, crop: :fill, class: "avatar-large me-3" %>
         <div class="post-show-subtitle-info">
           <div class="post-show-author"><%= @post.user.nickname.capitalize %></div>
-          <div class="post-show-date"><%= l(@post.created_at, format: "%-d %B %Y") %></div>
-          <div class="post-show-url"><i class="fa-solid fa-globe me-1"></i> <%= @post.url %></div>
+          <div class="post-show-date"><%= l(@post.created_at, format: "%A %-d %B %Y").capitalize %></div>
+          <div class="post-show-url"><%= link_to @post.url, target: :_blank do %><i class="fa-solid fa-globe me-1"></i> <%= @post.url %><% end %></div>
         </div>
       </div>
       <% unless @comments.size == 0 %>

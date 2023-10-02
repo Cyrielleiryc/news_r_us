@@ -3,5 +3,9 @@
   <%= f.input :url, label: "Lien de l'article" %>
   <%= f.input :content, label: "Contenu de l'article", input_html: { rows: 10 } %>
   <%= f.input :photo, as: :file %>
-  <%= f.button :submit, "Envoyer l'article", class: "cta-add-comment" %>
+  <% if post.new_record? %>
+    <%= f.button :submit, "Envoyer l'article", class: "cta-add-comment" %>
+  <% else %>
+    <%= f.button :submit, "Modifier l'article", class: "cta-add-comment" %>
+  <% end %>
 <% end %>

@@ -1,8 +1,8 @@
 <div class="container mt-3 mb-5">
-  <h1>Mes publications</h1>
-  <div class="all-posts">
+  <div class="post-show">
+    <h1>Mes publications (<%= @posts.size %>)</h1>
     <% @posts.each do |post| %>
-      <%= render 'card', post: post %>
+      <%= render 'card_my_posts', post: post %>
     <% end %>
   </div>
 </div>

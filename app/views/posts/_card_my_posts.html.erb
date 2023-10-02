@@ -1,0 +1,27 @@
+<div class="my-post mt-3">
+  <%# zone qui contient l'image et les infos sur la publication  %>
+  <div class="my-post-left">
+    <%= cl_image_tag post.photo.key, class: "my-post-img me-3", crop: :fill %>
+    <div class="my-post-info">
+      <div class="my-post-info-title"><%= post.title.size <= 30 ? post.title : "#{post.title.first(30)} ..." %></div>
+      <div class="my-post-info-date"><%= l(post.created_at, format: "%-d %B %Y") %></div>
+      <div class="my-post-info-comments">
+        <% if post.comments.size == 0 %>
+          Aucun commentaire
+        <% else %>
+          <%= post.ratings_average %> / 5 - <%= post.comments.size %> commentaire<%= 's' if post.comments.size >= 2 %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <%# zone qui contient les actions 'show', 'edit', 'delete' %>
+  <div class="my-post-actions">
+    <%# voir la publication %>
+    <%= link_to post_path(post) do %><i class="fa-solid fa-eye"></i><% end %>
+    <%# modifier la publication %>
+    <%= link_to edit_post_path(post) do %><i class="fa-solid fa-pen-to-square"></i><% end %>
+    <%# supprimer la publication %>
+    <%= link_to post_path(post), data: {turbo_method: :delete, turbo_confirm: "Confirmez-vous la suppression de cette publication ?"} do %><i class="fa-solid fa-trash-can"></i><% end %>
+  </div>
+</div>

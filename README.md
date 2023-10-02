@@ -1,10 +1,10 @@
 
 # News'R'Us
 
-Small web application that enables users to read and create posts about actuality. Comments and ratings are available too. 
+Small web application that enables users to read and create posts about actuality. Comments and ratings are available too.
 
 
-![Logo]('app/assets/images/logo')
+![Logo]('app/assets/images/logojpg')
 
 
 ## Autrice
@@ -28,4 +28,3 @@ https://www.loom.com/share/c2095f3d08ea4918a86277efca619d78?sid=77a80251-815e-40
 **Client:** HTML, CSS, JavaScript, Stimulus
 
 **Server:** Ruby, Rails, PostgreSQL
-

@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index ]
+  skip_before_action :authenticate_user!, only: %i[index]
+  skip_after_action :verify_authorized, only: %i[show new create]
 
   def index
     if params[:query].present?
@@ -7,6 +8,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
+    skip_policy_scope
   end
 
   def show

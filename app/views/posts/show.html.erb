@@ -15,7 +15,7 @@
         <div class="post-show-subtitle-info">
           <div class="post-show-author"><%= @post.user.nickname.capitalize %></div>
           <div class="post-show-date"><%= l(@post.created_at, format: "%A %-d %B %Y").capitalize %></div>
-          <div class="post-show-url"><%= link_to @post.url, target: :_blank do %><i class="fa-solid fa-globe me-1"></i> <%= @post.url %><% end %></div>
+          <div class="post-show-url"><%= link_to @post.url, target: :_blank do %><i class="fa-solid fa-globe me-1"></i> <%= @post.url.first(60)... %><% end %></div>
         </div>
       </div>
       <% unless @comments.size == 0 %>
@@ -27,7 +27,7 @@
 
     <%# zone qui contient l'image et le corps de la publication %>
     <%= cl_image_tag @post.photo.key, crop: :fill, class: "post-show-img mt-3" %>
-    <div class="post-show-content mt-3"><%= @post.content %></div>
+    <div class="post-show-content mt-3"><%= @post.content.html_safe %></div>
 
     <%# zone qui contient les notes et le boutons pour ajouter un commentaire %>
     <div id="comments" class="comment-headers mt-3">

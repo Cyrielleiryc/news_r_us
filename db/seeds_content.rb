@@ -1,3 +1,0 @@
-# POSTS contents
-
-# COMMENTS contents 

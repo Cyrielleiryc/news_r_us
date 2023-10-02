@@ -1,0 +1,19 @@
+.comment-headers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.close-add-comment {
+  padding: 5px 10px;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  position: absolute;
+  top: 40px;
+  right: -5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,82 @@
+// "Voir toutes les publications" pages#home
+.cta-all-posts {
+  color: $bleu;
+  border: 1px solid $bleu;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+  background-color: white;
+
+  &:hover {
+    opacity: 1;
+    color: $navy;
+  }
+}
+
+// "Lire" posts#index
+.post-card-button {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+    text-align: center;
+    font-family: $headers-font;
+    font-weight: bold;
+    background: linear-gradient(90deg, $navy 0%, $bleu 100%);
+    opacity: 0.9;
+    transition: 0.5s ease;
+    color: white;
+    padding: 5px 0;
+    border-radius: 50px;
+    width: 35%;
+
+    &:hover {
+      opacity: 1;
+      background: linear-gradient(90deg, $bleu 0%, $navy 100%);
+    }
+  }
+}
+
+// "Ajouter un commentaire" posts#show
+.add-comment-btn {
+  text-align: center;
+  font-family: $headers-font;
+  font-weight: bold;
+  background: linear-gradient(90deg, $navy 0%, $bleu 100%);
+  opacity: 0.9;
+  transition: 0.5s ease;
+  color: white;
+  padding: 5px 0;
+  border-radius: 50px;
+  width: 35%;
+
+  &:hover {
+    opacity: 1;
+    background: linear-gradient(90deg, $bleu 0%, $navy 100%);
+    cursor: pointer;
+  }
+}
+
+// "Envoyer son commentaire" posts#show
+.cta-add-comment {
+  text-align: center;
+  font-family: $headers-font;
+  font-weight: bold;
+  background: linear-gradient(90deg, $navy 0%, $bleu 100%);
+  opacity: 0.9;
+  transition: 0.5s ease;
+  color: white;
+  padding: 5px 0;
+  border-radius: 50px;
+  width: 60%;
+
+  &:hover {
+    opacity: 1;
+    background: linear-gradient(90deg, $bleu 0%, $navy 100%);
+  }
+}

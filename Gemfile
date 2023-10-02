@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.8"
+gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -28,7 +28,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
+gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -50,6 +50,7 @@ gem "sassc-rails"
 
 gem "bootstrap", "~> 5.2"
 gem "devise"
+gem 'devise-i18n'
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
@@ -75,5 +76,20 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-
+  gem "webdrivers"
+  gem "factory_bot_rails"
+  # gem "faker"
+  gem "rspec-rails"
 end
+
+# cloudinary for avatar and image hosting
+gem "cloudinary"
+
+# faker gem for seeds
+gem 'faker'
+
+# french version
+gem 'rails-i18n'
+
+# search gem
+gem "pg_search"

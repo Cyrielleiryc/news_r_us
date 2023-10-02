@@ -1,0 +1,38 @@
+.all-posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.post-card {
+  width: 24%;
+  height: 300px;
+  border: 1px solid $bleu;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+  padding: 15px;
+  background-color: white;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.post-card-img {
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.post-card-date-ratings {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-card-title {
+  font-family: $headers-font;
+  font-size: 18px;
+  color: $navy;
+}

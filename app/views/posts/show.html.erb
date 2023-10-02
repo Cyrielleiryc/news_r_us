@@ -1,0 +1,53 @@
+<div class="container mt-3 mb-5 position-relative" data-controller="new-comment">
+  <%# lien pour revenir aux publications %>
+  <div class="go-back"><%= link_to posts_path do %><i class="fa-solid fa-chevron-left"></i> Retour aux publications<% end %></div>
+
+  <%# zone restreinte pour contenir toute la publication %>
+  <div class="post-show">
+
+    <%# zone qui contient le titre de la publication %>
+    <div class="post-show-title pb-3"><%= @post.title %></div>
+
+    <%# zone qui contient l'avatar et le nom de l'auteur, la date, le lien, les notes %>
+    <div class="post-show-subtitle mt-3 pb-3">
+      <div class="post-show-subtitle-left">
+        <%= cl_image_tag @post.user.avatar.key, crop: :fill, class: "avatar-large me-3" %>
+        <div class="post-show-subtitle-info">
+          <div class="post-show-author"><%= @post.user.nickname.capitalize %></div>
+          <div class="post-show-date"><%= l(@post.created_at, format: "%-d %B %Y") %></div>
+          <div class="post-show-url"><i class="fa-solid fa-globe me-1"></i> <%= @post.url %></div>
+        </div>
+      </div>
+      <% unless @comments.size == 0 %>
+        <%= link_to "/posts/#{@post.id}#comments" do %>
+          <%= render 'ratings', post: @post %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <%# zone qui contient l'image et le corps de la publication %>
+    <%= cl_image_tag @post.photo.key, crop: :fill, class: "post-show-img mt-3" %>
+    <div class="post-show-content mt-3"><%= @post.content %></div>
+
+    <%# zone qui contient les notes et le boutons pour ajouter un commentaire %>
+    <div id="comments" class="comment-headers mt-3">
+      <% unless @comments.size == 0 %>
+        <%= render 'ratings', post: @post %>
+      <% end %>
+      <div class="add-comment-btn <%= "d-none" if @post.user == current_user %>" data-action="click->new-comment#add" data-new-comment-target="add">Ajouter un commentaire</div>
+      <div class="close-add-comment d-none" data-action="click->new-comment#close" data-new-comment-target="close"><i class="fa-solid fa-xmark"></i></div>
+    </div>
+
+    <%# zone qui contient le formulaire pour ajouter un commentaire %>
+    <div class="d-none" data-new-comment-target="form">
+      <%= render 'comments/form', post: @post, comment: @comment %>
+    </div>
+
+    <%# zone qui contient tous les commentaires %>
+    <div class="all-comments mt-4">
+      <% @comments.each do |comment| %>
+        <%= render 'comments/card', comment: comment %>
+      <% end %>
+    </div>
+  </div>
+</div>

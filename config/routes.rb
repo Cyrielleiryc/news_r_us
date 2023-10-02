@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :posts, only: %i[index show new create] do
+    resources :comments, only: %i[create]
+  end
+
+  get 'my_posts', to: "posts#my_posts"
 end

@@ -1,0 +1,32 @@
+.all-comments {
+  width: 100%;
+}
+
+.comment {
+  width: 100%;
+  padding: 15px 0;
+  border-bottom: 1px solid $bleu;
+
+  &:last-child {
+    border: none;
+  }
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+
+  .comment-header-left {
+    display: flex;
+
+    .comment-author-name {
+      color: $navy;
+      font-family: $headers-font;
+    }
+
+    .comment-date {
+      color: grey;
+      font-size: 12px;
+    }
+  }
+}

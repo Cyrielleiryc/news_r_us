@@ -1,0 +1,24 @@
+<div class="comment">
+
+  <%# zone qui contient l'en-tête de chaque commentaire (avatar, nom, date, étoiles) %>
+  <div class="comment-header mb-2">
+    <div class="comment-header-left">
+      <%= cl_image_tag comment.user.avatar.key, class: "avatar-bordered me-3", crop: :fill %>
+      <div class="comment-header-info">
+        <div class="comment-author-name"><%= comment.user.nickname.capitalize %></div>
+        <div class="comment-date">Il y a <%= comment.time_ago %></div>
+      </div>
+    </div>
+    <div class="comment-stars">
+      <% comment.rating.times do %>
+        <i class="fa-solid fa-star"></i>
+      <% end %>
+      <% (5 - comment.rating).times do %>
+        <i class="fa-regular fa-star"></i>
+      <% end %>
+    </div>
+  </div>
+
+  <%# zone qui contient le texte du commentaire %>
+  <div class="comment-content"><%= comment.content %></div>
+</div>

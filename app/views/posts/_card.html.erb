@@ -1,0 +1,16 @@
+<div class="post-card mt-3">
+  <div class="post-card-img" style="background-image: url('<%= cl_image_path post.photo.key, crop: :fill %>')"></div>
+  <div class="post-card-txt">
+    <div class="post-card-date-ratings mt-2">
+      <div class="post-card-date"><%= l(post.created_at, format: "%-d %b %Y") %></div>
+      <% unless post.comments.size == 0 %>
+        <div class="post-card-ratings"><i class="fa-solid fa-star"></i> <%= post.ratings_average %></div>
+      <% end %>
+    </div>
+    <div class="post-card-title mt-2"><%= post.title.first(20) %><%= "..." if post.title.size > 20 %></div>
+    <div class="post-card-content mt-2"><%= post.content.first(45) %><%= "..." if post.content.size > 45 %></div>
+    <div class="post-card-button">
+      <%= link_to "Lire", post_path(post), class: "cta-read-post" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="form-add-comment mt-3 mb-3">
+  <%= simple_form_for [post, comment] do |f| %>
+    <%= f.input :rating, label: "Votre note", collection: 1..5, class: "input-rating" %>
+    <%= f.input :content, label: "Votre commentaire", input_html: { rows: 5 } %>
+    <%= f.button :submit, "Envoyer votre commentaire", class: "cta-add-comment" %>
+  <% end %>
+</div>

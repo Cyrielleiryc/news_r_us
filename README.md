@@ -4,7 +4,7 @@
 Small web application that enables users to read and create posts about actuality. Comments and ratings are available too.
 
 
-![Logo]('app/assets/images/logo-jpg')
+![Logo](app/assets/images/logo-jpg.jpg)
 
 
 ## Autrice
@@ -14,10 +14,10 @@ Small web application that enables users to read and create posts about actualit
 
 ## Captures d'écran
 
-![Accueil]('app/assets/images/01-accueil')
-![Index]('app/assets/images/02-index')
-![En-tête d'un article]('app/assets/images/03-show1')
-![Liste de mes articles]('app/assets/images/06-my-posts')
+![Accueil](app/assets/images/01-accueil.jpg)
+![Index](app/assets/images/02-index.jpg)
+![En-tête d'un article](app/assets/images/03-show1.jpg)
+![Liste de mes articles](app/assets/images/06-my-posts.jpg)
 
 
 ## Demo

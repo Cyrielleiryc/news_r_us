@@ -7,6 +7,11 @@ Small web application that enables users to read and create posts about actualit
 ![Logo](app/assets/images/logo-jpg.jpg)
 
 
+## Demo
+
+https://www.loom.com/share/c2095f3d08ea4918a86277efca619d78?sid=77a80251-815e-406a-98a3-ac7495a8c8f1
+
+
 ## Autrice
 
 - [@cyrielleiryc](https://www.github.com/cyrielleiryc)
@@ -19,10 +24,6 @@ Small web application that enables users to read and create posts about actualit
 ![En-tête d'un article](app/assets/images/03-show1.jpg)
 ![Liste de mes articles](app/assets/images/06-my-posts.jpg)
 
-
-## Demo
-
-https://www.loom.com/share/c2095f3d08ea4918a86277efca619d78?sid=77a80251-815e-406a-98a3-ac7495a8c8f1
 
 
 ## Tech Stack
